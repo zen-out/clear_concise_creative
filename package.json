@@ -1,0 +1,15 @@
+{
+  "name": "clear_concise_creative",
+  "version": "1.0.0",
+  "description": "read write files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zen-out",
+  "license": "MIT",
+  "dependencies": {
+    "code_clarity": "^1.0.21",
+    "fs-extra": "^10.0.1"
+  }
+}
