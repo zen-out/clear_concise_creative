@@ -1,3 +1,4 @@
+const _ = require("lodash")
 const path = require("path")
 const { see, hourglass } = require("code_clarity")
 const fs = require("fs-extra")
@@ -102,4 +103,43 @@ function replaceJSON(filePath, arrDir, objectToReplace) {
     }
 }
 
-module.exports = { writeJSON, readJSON, appendToJSON, replaceJSON }
+/**
+ * @example
+ * // let scripts = getJSONObject("../package.json", ["scripts"])
+// console.log("🚀 ~ file: json.js ~ line 116 ~ scripts", scripts)
+ * @author zen-out
+ * @date 2022-03-06
+ * @param {any} filePath
+ * @param {any}  arrDir
+ * @returns {any}
+ */
+function getJSONObject(filePath, arrDir) {
+    let readFromFile = readJSON(filePath)
+    let currObj = readFromFile
+    for (let i = 0; i < arrDir.length; i++) {
+        let getName = arrDir[i]
+        currObj = currObj[getName]
+    }
+    return currObj;
+}
+
+/**
+ * @example
+ * let addedCommands = mergeJSONObject("../package.json", ["scripts"], {
+    "play": "node playground.js",
+    "deploy": "git add . && git commit -m 'updated' && git push && npm version patch && npm publish",
+})
+ * @author zen-out
+ * @date 2022-03-06
+ * @param {any} filePath
+ * @param {any}  arrDir
+ * @param {any}  updateObj
+ * @returns {any}
+ */
+function mergeJSONObject(filePath, arrDir, updateObj) {
+    let original = getJSONObject(filePath, arrDir)
+    let merged = _.extend(original, updateObj);
+    replaceJSON(filePath, arrDir, merged)
+}
+
+module.exports = { writeJSON, readJSON, appendToJSON, replaceJSON, mergeJSONObject, getJSONObject }

@@ -15,14 +15,23 @@ const fs = require("fs-extra")
 const test_waters = require("test_waters")
 const { see, hourglass } = require("code_clarity")
 
-ccc.appendFile("./readMe.txt", { yo: "whatsup" })
-let objectDir = ["opts", "theme_opts", "codepen"]
-ccc.replaceJSON("./data/appendToMe.json", ["opts", "theme_opts", "codepen"], {
-    "enable_for": [
-        "examples"
-    ],
-    "options": {
-        "js_external": "hellooo",
-        "js_pre_processor": "babel"
-    }
-})
+// ccc.appendFile("./readMe.txt", { yo: "whatsup" })
+// let objectDir = ["opts", "theme_opts", "codepen"]
+// ccc.replaceJSON("./data/appendToMe.json", ["opts", "theme_opts", "codepen"], {
+//     "enable_for": [
+//         "examples"
+//     ],
+//     "options": {
+//         "js_external": "hellooo",
+//         "js_pre_processor": "babel"
+//     }
+// })
+
+// let scripts = ccc.getJSONObject("./package.json", ["scripts"])
+// console.log("🚀 ~ file: json.js ~ line 116 ~ scripts", scripts)
+
+
+// let addedCommands = ccc.mergeJSONObject("./package.json", ["scripts"], {
+//     "play": "node playground.js",
+//     "deploy": "git add . && git commit -m 'updated' && git push && npm version patch && npm publish",
+// })
