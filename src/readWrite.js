@@ -25,4 +25,22 @@ function writeFile(fileLocation, type) {
     fs.writeFileSync(fileLocation, stringed)
 
 }
-module.exports = { readFile, writeFile }
+
+/**
+ * @Description 
+ * 1. Formats data
+ * 2. Appends to file 
+ * @example
+ * ccc.appendFile("./readMe.txt", { yo: "whatsup" })
+ * @author zen-out
+ * @date 2022-03-06
+ * @param {any} type
+ * @param {any} "string"
+ * @returns {any}
+ */
+function appendFile(fileLocation, type) {
+    let stringed = make_legit.format(type, "string")
+    fs.appendFileSync(fileLocation, stringed)
+
+}
+module.exports = { readFile, writeFile, appendFile }

@@ -15,6 +15,14 @@ const fs = require("fs-extra")
 const test_waters = require("test_waters")
 const { see, hourglass } = require("code_clarity")
 
-
+ccc.appendFile("./readMe.txt", { yo: "whatsup" })
 let objectDir = ["opts", "theme_opts", "codepen"]
-ccc.replaceJSON("./data/appendToMe.json", objectDir, { "sexylink": "link" })
+ccc.replaceJSON("./data/appendToMe.json", ["opts", "theme_opts", "codepen"], {
+    "enable_for": [
+        "examples"
+    ],
+    "options": {
+        "js_external": "hellooo",
+        "js_pre_processor": "babel"
+    }
+})
