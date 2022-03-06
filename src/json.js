@@ -141,5 +141,34 @@ function mergeJSONObject(filePath, arrDir, updateObj) {
     let merged = _.extend(original, updateObj);
     replaceJSON(filePath, arrDir, merged)
 }
+// let scripts = getJSONObject("../package.json", ["scripts"])
+// console.log("🚀 ~ file: json.js ~ line 116 ~ scripts", scripts)
 
-module.exports = { writeJSON, readJSON, appendToJSON, replaceJSON, mergeJSONObject, getJSONObject }
+/**
+ * @example
+ * addToNestedJSON("../sample.json", ["opts", "theme_opts", "menu"], {
+    "title": "visual instructions",
+    "link": "hi",
+    "target": "_blank"
+})
+ * @author zen-out
+ * @date 2022-03-06
+ * @param {any} filePath
+ * @param {any}  arrDir
+ * @param {any}  addObj
+ * @returns {any}
+ */
+function addToNestedJSON(filePath, arrDir, addObj) {
+    let original = getJSONObject(filePath, arrDir)
+    if (Array.isArray(original)) {
+        original.push(addObj)
+        replaceJSON(filePath, arrDir, original)
+    } else {
+        let newArr = []
+        newArr.push(original)
+        newArr.push(addObj)
+        replaceJSON(filePath, arrDir, newArr)
+    }
+}
+
+module.exports = { writeJSON, readJSON, appendToJSON, replaceJSON, mergeJSONObject, getJSONObject, addToNestedJSON }
