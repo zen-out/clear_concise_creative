@@ -23,7 +23,6 @@ let writeObject = ccc.writeFile("./data/writeToMe.txt", { id: 1, name: "lesley" 
 function writeFile(fileLocation, type) {
     let stringed = make_legit.format(type, "string")
     fs.writeFileSync(fileLocation, stringed)
-
 }
 
 /**

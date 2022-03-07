@@ -24,8 +24,10 @@ const { see, hourglass } = require("code_clarity")
 // ccc.copy("./src/*", "./dist")
 
 // to move specific files
-ccc.copy("./src/**.js", "./dist") // to move specific files
-ccc.copy("./src/**/*", "dist", true) // to move entire folder
+let copyThis = ccc.readFile("./copyMe.js")
+ccc.writeFile("./pasteMe.js", copyThis)
+    // ccc.copy("./src/**.js", "./dist") // to move specific files
+    // ccc.copy("./src/**/*", "dist", true) // to move entire folder
     // ccc.appendFile("./readMe.txt", { yo: "whatsup" })
     // let objectDir = ["opts", "theme_opts", "codepen"]
     // ccc.replaceJSON("./data/appendToMe.json", ["opts", "theme_opts", "codepen"], {
