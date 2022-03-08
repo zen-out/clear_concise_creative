@@ -25,7 +25,8 @@ const { see, hourglass } = require("code_clarity")
 
 // to move specific files
 let copyThis = ccc.readFile("./copyMe.js")
-ccc.writeFile("./pasteMe.js", copyThis)
+let dirNames = ccc.getDirNames("./src", ".js")
+console.log(dirNames)
     // ccc.copy("./src/**.js", "./dist") // to move specific files
     // ccc.copy("./src/**/*", "dist", true) // to move entire folder
     // ccc.appendFile("./readMe.txt", { yo: "whatsup" })

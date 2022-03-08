@@ -1,23 +1,29 @@
-# Instructions: 
-```npm install clear_concise_creative ``` 
- ``` const ccc =  require('clear_concise_creative')```
+# clear_concise_creative
+[clear_concise_creative - start here](https://zen-out.github.io/packages/clear_concise_creative)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![NPM Downloads](https://img.shields.io/npm/dw/clear_concise_creative)
+## Instructions: 
+```npm install clear_concise_creative ``` 
+ ``` const ccc =  require('clear_concise_creative')```
+
 ## Functions
 
 <dl>
+<dt><a href="#copy">copy(toCopy, copyTo)</a> ⇒ <code>any</code></dt>
+<dd></dd>
 <dt><a href="#deletePath">deletePath(path)</a> ⇒ <code>any</code></dt>
-<dd><p>deletePath(&quot;./test/deleteThis2&quot;)
-deletePath(&quot;./test/deleteThis2/delete.js&quot;)</p>
+<dd><p>ccc.deletePath(&quot;./test/deleteThis2&quot;)
+ccc.deletePath(&quot;./test/deleteThis2/delete.js&quot;)</p>
 </dd>
 <dt><a href="#writeJSON">writeJSON(filePath, object)</a></dt>
-<dd><p>writeJSON(&#39;./db.json&#39;, array)
-writeJSON(&#39;./db.json&#39;, object)</p>
+<dd><p>ccc.writeJSON(&#39;./db.json&#39;, array)
+ccc.writeJSON(&#39;./db.json&#39;, object)</p>
 </dd>
 <dt><a href="#readJSON">readJSON(filePath)</a> ⇒ <code>object</code></dt>
-<dd><p>let getJSON = readJSON(&quot;./db.json&quot;)</p>
+<dd><p>let getJSON = ccc.readJSON(&quot;./db.json&quot;)</p>
 </dd>
-<dt><a href="#appendToJSON">appendToJSON(&quot;1:30PM&quot;)</a> ⇒ <code>any</code></dt>
+<dt><a href="#appendToJSON">appendToJSON(&quot;1:30PM&quot;)</a></dt>
 <dd><ol>
 <li>Grabs JSON from json file</li>
 <li>If the key does not exist, then it will create a new key and assign the object </li>
@@ -25,17 +31,19 @@ writeJSON(&#39;./db.json&#39;, object)</p>
 <li>It will create an array and it will push the object into the array</li>
 </ol>
 </dd>
-<dt><a href="#replaceJSON">replaceJSON(filePath, filePath)</a> ⇒ <code>any</code></dt>
+<dt><a href="#replaceJSON">replaceJSON(filePath, filePath)</a></dt>
 <dd><ol>
 <li>Reads from json file </li>
 <li>Replaces object depeneding on array passed in</li>
 </ol>
 </dd>
-<dt><a href="#getJSONObject">getJSONObject(filePath, arrDir)</a> ⇒ <code>any</code></dt>
+<dt><a href="#getJSONObject">getJSONObject(filePath, arrDir)</a> ⇒ <code>object</code></dt>
 <dd></dd>
-<dt><a href="#mergeJSONObject">mergeJSONObject(filePath, arrDir, updateObj)</a> ⇒ <code>any</code></dt>
+<dt><a href="#mergeJSONObject">mergeJSONObject(filePath, arrDir, updateObj)</a></dt>
 <dd></dd>
-<dt><a href="#addToNestedJSON">addToNestedJSON(filePath, arrDir, addObj)</a> ⇒ <code>any</code></dt>
+<dt><a href="#addToNestedJSON">addToNestedJSON(filePath, arrDir, addObj)</a></dt>
+<dd></dd>
+<dt><a href="#getDirNames">getDirNames(folder, ext)</a> ⇒ <code>any</code></dt>
 <dd></dd>
 <dt><a href="#writeFile">writeFile(type, &quot;string&quot;)</a> ⇒ <code>any</code></dt>
 <dd><ol>
@@ -50,11 +58,28 @@ writeJSON(&#39;./db.json&#39;, object)</p>
 </dd>
 </dl>
 
+<a name="copy"></a>
+
+## copy(toCopy, copyTo) ⇒ <code>any</code>
+**Kind**: global function  
+**Date**: 2022-03-07  
+**Author**: zen-out  
+
+| Param  | Type             |
+|--------|------------------|
+| toCopy | <code>any</code> |
+| copyTo | <code>any</code> |
+
+**Example**  
+```js
+ccc.copy("./src/**.js", "./dist") 
+ccc.copy("./src/ ** / *", "dist", true)
+```
 <a name="deletePath"></a>
 
 ## deletePath(path) ⇒ <code>any</code>
-deletePath("./test/deleteThis2")
-deletePath("./test/deleteThis2/delete.js")
+ccc.deletePath("./test/deleteThis2")
+ccc.deletePath("./test/deleteThis2/delete.js")
 
 **Kind**: global function  
 **Date**: 2022-03-04  
@@ -67,8 +92,8 @@ deletePath("./test/deleteThis2/delete.js")
 <a name="writeJSON"></a>
 
 ## writeJSON(filePath, object)
-writeJSON('./db.json', array)
-writeJSON('./db.json', object)
+ccc.writeJSON('./db.json', array)
+ccc.writeJSON('./db.json', object)
 
 **Kind**: global function  
 **Date**: 2022-03-04  
@@ -82,7 +107,7 @@ writeJSON('./db.json', object)
 <a name="readJSON"></a>
 
 ## readJSON(filePath) ⇒ <code>object</code>
-let getJSON = readJSON("./db.json")
+let getJSON = ccc.readJSON("./db.json")
 
 **Kind**: global function  
 **Date**: 2022-03-04  
@@ -94,7 +119,7 @@ let getJSON = readJSON("./db.json")
 
 <a name="appendToJSON"></a>
 
-## appendToJSON(&quot;1:30PM&quot;) ⇒ <code>any</code>
+## appendToJSON(&quot;1:30PM&quot;)
 1. Grabs JSON from json file
 2. If the key does not exist, then it will create a new key and assign the object 
 3. If the key does exist, and it is not an array 
@@ -114,7 +139,7 @@ ccc.appendToJSON("./data/appendToMe.json", "test", { id: "lesley" })
 ```
 <a name="replaceJSON"></a>
 
-## replaceJSON(filePath, filePath) ⇒ <code>any</code>
+## replaceJSON(filePath, filePath)
 1. Reads from json file 
 2. Replaces object depeneding on array passed in
 
@@ -134,8 +159,9 @@ ccc.replaceJSON("./data/appendToMe.json", objectDir, { "sexylink": "link" })
 ```
 <a name="getJSONObject"></a>
 
-## getJSONObject(filePath, arrDir) ⇒ <code>any</code>
+## getJSONObject(filePath, arrDir) ⇒ <code>object</code>
 **Kind**: global function  
+**Returns**: <code>object</code> - JSON object  
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
@@ -146,12 +172,11 @@ ccc.replaceJSON("./data/appendToMe.json", objectDir, { "sexylink": "link" })
 
 **Example**  
 ```js
-// let scripts = getJSONObject("../package.json", ["scripts"])
-// console.log("🚀 ~ file: json.js ~ line 116 ~ scripts", scripts)
+let scripts = ccc.getJSONObject("../package.json", ["scripts"])
 ```
 <a name="mergeJSONObject"></a>
 
-## mergeJSONObject(filePath, arrDir, updateObj) ⇒ <code>any</code>
+## mergeJSONObject(filePath, arrDir, updateObj)
 **Kind**: global function  
 **Date**: 2022-03-06  
 **Author**: zen-out  
@@ -164,14 +189,14 @@ ccc.replaceJSON("./data/appendToMe.json", objectDir, { "sexylink": "link" })
 
 **Example**  
 ```js
-let addedCommands = mergeJSONObject("../package.json", ["scripts"], {
+let addedCommands = ccc.mergeJSONObject("../package.json", ["scripts"], {
     "play": "node playground.js",
     "deploy": "git add . && git commit -m 'updated' && git push && npm version patch && npm publish",
 })
 ```
 <a name="addToNestedJSON"></a>
 
-## addToNestedJSON(filePath, arrDir, addObj) ⇒ <code>any</code>
+## addToNestedJSON(filePath, arrDir, addObj)
 **Kind**: global function  
 **Date**: 2022-03-06  
 **Author**: zen-out  
@@ -184,11 +209,28 @@ let addedCommands = mergeJSONObject("../package.json", ["scripts"], {
 
 **Example**  
 ```js
-addToNestedJSON("../sample.json", ["opts", "theme_opts", "menu"], {
+ccc.addToNestedJSON("../sample.json", ["opts", "theme_opts", "menu"], {
     "title": "visual instructions",
     "link": "hi",
     "target": "_blank"
 })
+```
+<a name="getDirNames"></a>
+
+## getDirNames(folder, ext) ⇒ <code>any</code>
+**Kind**: global function  
+**Date**: 2022-03-08  
+**Author**: zen-out  
+
+| Param  | Type             |
+|--------|------------------|
+| folder | <code>any</code> |
+| ext    | <code>any</code> |
+
+**Example**  
+```js
+let dirNames = ccc.getDirNames("./src", ".js")
+console.log(dirNames)
 ```
 <a name="writeFile"></a>
 
