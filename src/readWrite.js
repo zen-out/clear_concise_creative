@@ -7,6 +7,26 @@ function readFile(fileLocation) {
     return string;
 }
 
+/**
+ * @example
+ * let dirNames = ccc.getDirNames("./src", ".js")
+console.log(dirNames)
+ * @author zen-out
+ * @date 2022-03-08
+ * @param {any} folder
+ * @param {any}  ext
+ * @returns {any}
+ */
+function getDirNames(folder, ext) {
+    let arr = []
+    let files = fs.readdirSync(folder)
+    files.forEach(file => {
+        let name = file.split(ext)[0].trim();
+        arr.push(name)
+    })
+    return arr;
+
+}
 
 /**
      * @Description 
@@ -42,4 +62,4 @@ function appendFile(fileLocation, type) {
     fs.appendFileSync(fileLocation, stringed)
 
 }
-module.exports = { readFile, writeFile, appendFile }
+module.exports = { readFile, writeFile, appendFile, getDirNames }
