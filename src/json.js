@@ -124,7 +124,7 @@ function getJSONObject(filePath, arrDir) {
  */
 function mergeJSONObject(filePath, arrDir, updateObj) {
     let original = getJSONObject(filePath, arrDir)
-    let merged = _.extend(original, updateObj);
+    let merged = extend(original, updateObj);
     replaceJSON(filePath, arrDir, merged)
 }
 
