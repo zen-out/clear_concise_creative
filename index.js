@@ -1,1 +1,2 @@
-"const ccc = require(\"./dist/index.js\")\n\nmodule.exports = ccc"
+const ccc = require("./dist/index.js")
+module.exports = ccc
