@@ -52,8 +52,7 @@ let writeObject = ccc.writeFile("./data/writeToMe.txt", { id: 1, name: "lesley" 
      * @returns {any}
      */
 function writeFile(fileLocation, type) {
-    let stringed = JSON.stringify(type)
-    fs.writeFileSync(fileLocation, stringed)
+    fs.writeFileSync(fileLocation, type)
 }
 
 /**
@@ -69,8 +68,7 @@ function writeFile(fileLocation, type) {
  * @returns {any}
  */
 function appendFile(fileLocation, type) {
-    let stringed = JSON.stringify(type)
-    fs.appendFileSync(fileLocation, stringed)
+    fs.appendFileSync(fileLocation, type)
 
 }
 module.exports = { readFile, writeFile, appendFile, getDirNames }
