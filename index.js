@@ -1,3 +1,1 @@
-const clear_concise_creative = require("./src/index.js")
-
-module.exports = clear_concise_creative
+"const ccc = require(\"./dist/index.js\")\n\nmodule.exports = ccc"
