@@ -1,4 +1,5 @@
 const { checkPath } = require('./checkPath')
+const make_legit = require("make_legit")
 const { extend } = require("lodash")
 const fs = require("fs-extra")
     /**
@@ -40,25 +41,32 @@ function readJSON(filePath) {
  * @date 2022-03-04
  * @param {any} "1:30PM"
  */
-function appendToJSON(filePath, key, object) {
-
+function appendToJSON(filePath, key, data) {
     if (checkPath(filePath)) {
         let readFromFile = readJSON(filePath)
         let getKey = readFromFile[key]
         if (getKey === undefined) {
-            readFromFile[key] = object
+            if (Array.isArray(data)) {
+                readFromFile[key] = data
+                writeJSON(filePath, readFromFile)
+            } else {
+                let newArr = []
+                newArr.push(data)
+                readFromFile[key] = newArr
+                writeJSON(filePath, readFromFile)
+            }
         } else {
-            if (Array.isArray(getKey)) {
-                getKey = getKey.push(object)
-                readFromFile[key] = getKey;
+            if (Array.isArray(readFromFile[key])) {
+                readFromFile[key].push(data)
+                writeJSON(filePath, readFromFile)
             } else {
                 let newArr = []
                 newArr.push(getKey)
-                newArr.push(object)
+                newArr.push(data)
                 readFromFile[key] = newArr;
+                writeJSON(filePath, readFromFile)
             }
         }
-        writeJSON(filePath, readFromFile)
     }
 }
 
