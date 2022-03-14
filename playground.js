@@ -10,5 +10,6 @@
  * 
  * 
  ********************************************/
-const ccc = require("./dist/index.js")
-let appendToJSON = ccc.appendToJSON("./package.json", "keywords", "test")
+const ccc = require("./index.js")
+let appendToJSON = ccc.readFile("./package.json")
+console.log(appendToJSON)
