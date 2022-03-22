@@ -1,16 +1,23 @@
 # clear_concise_creative
-[clear_concise_creative - start here](https://zen-out.github.io/packages/clear_concise_creative)
-[![here](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/clear_concise_creative.png)](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/clear_concise_creative.png)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![NPM Downloads](https://img.shields.io/npm/dw/clear_concise_creative)
+[Play with docs](https://zen-out.github.io/modules/clear_concise_creative.html)
 ## Instructions: 
-```npm install clear_concise_creative ``` 
- ``` const clear_concise_creative =  require('clear_concise_creative')```
+
+```js
+npm install clear_concise_creative
+const clear_concise_creative =  require('clear_concise_creative')
+```
+
 
 ## Functions
 
 <dl>
-<dt><a href="#copy">copy(toCopy, copyTo)</a> ⇒ <code>any</code></dt>
+<dt><a href="#checkPath">checkPath(path)</a> ⇒ <code>boolean</code></dt>
+<dd><p>checkPath(path)</p>
+</dd>
+<dt><a href="#copy">copy(toCopy, copyTo, copy)</a> ⇒ <code>any</code></dt>
 <dd></dd>
 <dt><a href="#deletePath">deletePath(path)</a> ⇒ <code>any</code></dt>
 <dd><p>ccc.deletePath(&quot;./test/deleteThis2&quot;)
@@ -43,9 +50,11 @@ ccc.writeJSON(&#39;./db.json&#39;, object)</p>
 <dd></dd>
 <dt><a href="#addToNestedJSON">addToNestedJSON(filePath, arrDir, addObj)</a></dt>
 <dd></dd>
-<dt><a href="#getDirNames">getDirNames(folder, ext)</a> ⇒ <code>any</code></dt>
+<dt><a href="#getDirNames">getDirNames(folder, ext)</a> ⇒ <code>array</code></dt>
 <dd><p>only return file names that include the extension</p>
 </dd>
+<dt><a href="#listDir">listDir(folder)</a> ⇒ <code>array</code></dt>
+<dd></dd>
 <dt><a href="#writeFile">writeFile(type, &quot;string&quot;)</a> ⇒ <code>any</code></dt>
 <dd><ol>
 <li>Will format the type of data you have and then write to the file accordingly</li>
@@ -59,17 +68,31 @@ ccc.writeJSON(&#39;./db.json&#39;, object)</p>
 </dd>
 </dl>
 
+<a name="checkPath"></a>
+
+## checkPath(path) ⇒ <code>boolean</code>
+checkPath(path)
+
+**Kind**: global function  
+**Date**: 2022-03-10  
+**Author**: zen-out  
+
+| Param | Type             |
+|-------|------------------|
+| path  | <code>any</code> |
+
 <a name="copy"></a>
 
-## copy(toCopy, copyTo) ⇒ <code>any</code>
+## copy(toCopy, copyTo, copy) ⇒ <code>any</code>
 **Kind**: global function  
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param  | Type             |
-|--------|------------------|
-| toCopy | <code>any</code> |
-| copyTo | <code>any</code> |
+| Param  | Type                 | Description |
+|--------|----------------------|-------------|
+| toCopy | <code>any</code>     |             |
+| copyTo | <code>any</code>     |             |
+| copy   | <code>boolean</code> | all         |
 
 **Example**  
 ```js
@@ -218,7 +241,7 @@ ccc.addToNestedJSON("../sample.json", ["opts", "theme_opts", "menu"], {
 ```
 <a name="getDirNames"></a>
 
-## getDirNames(folder, ext) ⇒ <code>any</code>
+## getDirNames(folder, ext) ⇒ <code>array</code>
 only return file names that include the extension
 
 **Kind**: global function  
@@ -237,6 +260,18 @@ console.log(dirNames)
 let jsOnly = getDirNames("./", ".html")
 console.log("🚀 ~ file: readWrite.js ~ line 33 ~ jsOnly", jsOnly)
 ```
+<a name="listDir"></a>
+
+## listDir(folder) ⇒ <code>array</code>
+**Kind**: global function  
+**Examplel**: listDir("./")  
+**Date**: 2022-03-22  
+**Author**: zen-out  
+
+| Param  | Type                |
+|--------|---------------------|
+| folder | <code>string</code> |
+
 <a name="writeFile"></a>
 
 ## writeFile(type, &quot;string&quot;) ⇒ <code>any</code>

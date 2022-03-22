@@ -22,21 +22,37 @@ console.log("🚀 ~ file: readWrite.js ~ line 33 ~ jsOnly", jsOnly)
  * @date 2022-03-08
  * @param {any} folder
  * @param {any}  ext
- * @returns {any}
+ * @returns {array}
  */
 function getDirNames(folder, ext) {
-    if (checkPath(folder)) {
+    let arr = []
+    let files = fs.readdirSync(folder)
+    files.forEach(file => {
+        if (file.includes(ext)) {
+            let name = file.split(ext)[0].trim();
+            arr.push(name)
+        }
+    })
+    return arr;
+}
 
-        let arr = []
-        let files = fs.readdirSync(folder)
-        files.forEach(file => {
-            if (file.includes(ext)) {
-                let name = file.split(ext)[0].trim();
-                arr.push(name)
-            }
-        })
-        return arr;
-    }
+
+/**
+ * @examplel
+ * listDir("./")
+ * @author zen-out
+ * @date 2022-03-22
+ * @param {string} folder
+ * @returns {array}
+ */
+function listDir(folder) {
+    let arr = []
+    let files = fs.readdirSync(folder)
+    files.forEach(file => {
+        let name = file.split(ext)[0].trim();
+        arr.push(name)
+    })
+    return arr;
 }
 
 /**
@@ -71,4 +87,4 @@ function appendFile(fileLocation, type) {
     fs.appendFileSync(fileLocation, type)
 
 }
-module.exports = { readFile, writeFile, appendFile, getDirNames }
+module.exports = { listDir, readFile, writeFile, appendFile, getDirNames }
