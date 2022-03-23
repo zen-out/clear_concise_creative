@@ -20,8 +20,8 @@ let jsOnly = getDirNames("./", ".html")
 console.log("🚀 ~ file: readWrite.js ~ line 33 ~ jsOnly", jsOnly)
  * @author zen-out
  * @date 2022-03-08
- * @param {any} folder
- * @param {any}  ext
+ * @param {string} folder
+ * @param {string}  ext
  * @returns {array}
  */
 function getDirNames(folder, ext) {
@@ -63,9 +63,8 @@ function listDir(folder) {
 let writeObject = ccc.writeFile("./data/writeToMe.txt", { id: 1, name: "lesley" })
      * @author zen-out
      * @date 2022-03-05
-     * @param {any} type
-     * @param {any} "string"
-     * @returns {any}
+     * @param {string} type
+     * @param {string} "string"
      */
 function writeFile(fileLocation, type) {
     fs.writeFileSync(fileLocation, type)
@@ -79,9 +78,8 @@ function writeFile(fileLocation, type) {
  * ccc.appendFile("./readMe.txt", { yo: "whatsup" })
  * @author zen-out
  * @date 2022-03-06
- * @param {any} type
- * @param {any} "string"
- * @returns {any}
+ * @param {string} type
+ * @param {string} "string"
  */
 function appendFile(fileLocation, type) {
     fs.appendFileSync(fileLocation, type)

@@ -7,10 +7,9 @@ const copyFiles = require("copyFiles")
      * ccc.copy("./src/ ** / *", "dist", true)
      * @author zen-out
      * @date 2022-03-07
-     * @param {any} toCopy
-     * @param {any}  copyTo
+     * @param {string} toCopy
+     * @param {string}  copyTo
      * @param {boolean} copy all 
-     * @returns {any}
      */
 function copy(toCopy, copyTo, all = false) {
     console.log("path exists")

@@ -11,15 +11,16 @@ const clear_concise_creative =  require('clear_concise_creative')
 ```
 
 
+
 ## Functions
 
 <dl>
 <dt><a href="#checkPath">checkPath(path)</a> ⇒ <code>boolean</code></dt>
 <dd><p>checkPath(path)</p>
 </dd>
-<dt><a href="#copy">copy(toCopy, copyTo, copy)</a> ⇒ <code>any</code></dt>
+<dt><a href="#copy">copy(toCopy, copyTo, copy)</a></dt>
 <dd></dd>
-<dt><a href="#deletePath">deletePath(path)</a> ⇒ <code>any</code></dt>
+<dt><a href="#deletePath">deletePath(path)</a></dt>
 <dd><p>ccc.deletePath(&quot;./test/deleteThis2&quot;)
 ccc.deletePath(&quot;./test/deleteThis2/delete.js&quot;)</p>
 </dd>
@@ -30,7 +31,7 @@ ccc.writeJSON(&#39;./db.json&#39;, object)</p>
 <dt><a href="#readJSON">readJSON(filePath)</a> ⇒ <code>object</code></dt>
 <dd><p>let getJSON = ccc.readJSON(&quot;./db.json&quot;)</p>
 </dd>
-<dt><a href="#appendToJSON">appendToJSON(&quot;1:30PM&quot;)</a></dt>
+<dt><a href="#appendToJSON">appendToJSON(filePath, key, data)</a></dt>
 <dd><ol>
 <li>Grabs JSON from json file</li>
 <li>If the key does not exist, then it will create a new key and assign the object </li>
@@ -38,7 +39,7 @@ ccc.writeJSON(&#39;./db.json&#39;, object)</p>
 <li>It will create an array and it will push the object into the array</li>
 </ol>
 </dd>
-<dt><a href="#replaceJSON">replaceJSON(filePath, filePath)</a></dt>
+<dt><a href="#replaceJSON">replaceJSON(filePath, filePath, object)</a></dt>
 <dd><ol>
 <li>Reads from json file </li>
 <li>Replaces object depeneding on array passed in</li>
@@ -55,12 +56,12 @@ ccc.writeJSON(&#39;./db.json&#39;, object)</p>
 </dd>
 <dt><a href="#listDir">listDir(folder)</a> ⇒ <code>array</code></dt>
 <dd></dd>
-<dt><a href="#writeFile">writeFile(type, &quot;string&quot;)</a> ⇒ <code>any</code></dt>
+<dt><a href="#writeFile">writeFile(type, &quot;string&quot;)</a></dt>
 <dd><ol>
 <li>Will format the type of data you have and then write to the file accordingly</li>
 </ol>
 </dd>
-<dt><a href="#appendFile">appendFile(type, &quot;string&quot;)</a> ⇒ <code>any</code></dt>
+<dt><a href="#appendFile">appendFile(type, &quot;string&quot;)</a></dt>
 <dd><ol>
 <li>Formats data</li>
 <li>Appends to file</li>
@@ -77,21 +78,21 @@ checkPath(path)
 **Date**: 2022-03-10  
 **Author**: zen-out  
 
-| Param | Type             |
-|-------|------------------|
-| path  | <code>any</code> |
+| Param | Type                |
+|-------|---------------------|
+| path  | <code>string</code> |
 
 <a name="copy"></a>
 
-## copy(toCopy, copyTo, copy) ⇒ <code>any</code>
+## copy(toCopy, copyTo, copy)
 **Kind**: global function  
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
 | Param  | Type                 | Description |
 |--------|----------------------|-------------|
-| toCopy | <code>any</code>     |             |
-| copyTo | <code>any</code>     |             |
+| toCopy | <code>string</code>  |             |
+| copyTo | <code>string</code>  |             |
 | copy   | <code>boolean</code> | all         |
 
 **Example**  
@@ -101,7 +102,7 @@ ccc.copy("./src/ ** / *", "dist", true)
 ```
 <a name="deletePath"></a>
 
-## deletePath(path) ⇒ <code>any</code>
+## deletePath(path)
 ccc.deletePath("./test/deleteThis2")
 ccc.deletePath("./test/deleteThis2/delete.js")
 
@@ -109,9 +110,9 @@ ccc.deletePath("./test/deleteThis2/delete.js")
 **Date**: 2022-03-04  
 **Author**: zen-out  
 
-| Param | Type             |
-|-------|------------------|
-| path  | <code>any</code> |
+| Param | Type                |
+|-------|---------------------|
+| path  | <code>string</code> |
 
 <a name="writeJSON"></a>
 
@@ -123,10 +124,10 @@ ccc.writeJSON('./db.json', object)
 **Date**: 2022-03-04  
 **Author**: zen-out  
 
-| Param    | Type             |
-|----------|------------------|
-| filePath | <code>any</code> |
-| object   | <code>any</code> |
+| Param    | Type                |
+|----------|---------------------|
+| filePath | <code>string</code> |
+| object   | <code>object</code> |
 
 <a name="readJSON"></a>
 
@@ -137,13 +138,13 @@ let getJSON = ccc.readJSON("./db.json")
 **Date**: 2022-03-04  
 **Author**: zen-out  
 
-| Param    | Type             |
-|----------|------------------|
-| filePath | <code>any</code> |
+| Param    | Type                |
+|----------|---------------------|
+| filePath | <code>string</code> |
 
 <a name="appendToJSON"></a>
 
-## appendToJSON(&quot;1:30PM&quot;)
+## appendToJSON(filePath, key, data)
 1. Grabs JSON from json file
 2. If the key does not exist, then it will create a new key and assign the object 
 3. If the key does exist, and it is not an array 
@@ -153,9 +154,11 @@ let getJSON = ccc.readJSON("./db.json")
 **Date**: 2022-03-04  
 **Author**: zen-out  
 
-| Param    | Type             |
-|----------|------------------|
-| "1:30PM" | <code>any</code> |
+| Param    | Type                |
+|----------|---------------------|
+| filePath | <code>string</code> |
+| key      | <code>string</code> |
+| data     | <code>object</code> |
 
 **Example**  
 ```js
@@ -163,7 +166,7 @@ ccc.appendToJSON("./data/appendToMe.json", "test", { id: "lesley" })
 ```
 <a name="replaceJSON"></a>
 
-## replaceJSON(filePath, filePath)
+## replaceJSON(filePath, filePath, object)
 1. Reads from json file 
 2. Replaces object depeneding on array passed in
 
@@ -171,10 +174,11 @@ ccc.appendToJSON("./data/appendToMe.json", "test", { id: "lesley" })
 **Date**: 2022-03-05  
 **Author**: zen-out  
 
-| Param    | Type             |
-|----------|------------------|
-| filePath | <code>any</code> |
-| filePath | <code>any</code> |
+| Param    | Type                | Description |
+|----------|---------------------|-------------|
+| filePath | <code>string</code> |             |
+| filePath | <code>string</code> |             |
+| object   | <code>object</code> | to replace  |
 
 **Example**  
 ```js
@@ -189,10 +193,10 @@ ccc.replaceJSON("./data/appendToMe.json", objectDir, { "sexylink": "link" })
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param    | Type             |
-|----------|------------------|
-| filePath | <code>any</code> |
-| arrDir   | <code>any</code> |
+| Param    | Type                |
+|----------|---------------------|
+| filePath | <code>string</code> |
+| arrDir   | <code>array</code>  |
 
 **Example**  
 ```js
@@ -205,11 +209,11 @@ let scripts = ccc.getJSONObject("../package.json", ["scripts"])
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param     | Type             |
-|-----------|------------------|
-| filePath  | <code>any</code> |
-| arrDir    | <code>any</code> |
-| updateObj | <code>any</code> |
+| Param     | Type                |
+|-----------|---------------------|
+| filePath  | <code>string</code> |
+| arrDir    | <code>array</code>  |
+| updateObj | <code>object</code> |
 
 **Example**  
 ```js
@@ -225,11 +229,11 @@ let addedCommands = ccc.mergeJSONObject("../package.json", ["scripts"], {
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param    | Type             |
-|----------|------------------|
-| filePath | <code>any</code> |
-| arrDir   | <code>any</code> |
-| addObj   | <code>any</code> |
+| Param    | Type                |
+|----------|---------------------|
+| filePath | <code>string</code> |
+| arrDir   | <code>array</code>  |
+| addObj   | <code>object</code> |
 
 **Example**  
 ```js
@@ -248,10 +252,10 @@ only return file names that include the extension
 **Date**: 2022-03-08  
 **Author**: zen-out  
 
-| Param  | Type             |
-|--------|------------------|
-| folder | <code>any</code> |
-| ext    | <code>any</code> |
+| Param  | Type                |
+|--------|---------------------|
+| folder | <code>string</code> |
+| ext    | <code>string</code> |
 
 **Example**  
 ```js
@@ -274,17 +278,17 @@ console.log("🚀 ~ file: readWrite.js ~ line 33 ~ jsOnly", jsOnly)
 
 <a name="writeFile"></a>
 
-## writeFile(type, &quot;string&quot;) ⇒ <code>any</code>
+## writeFile(type, &quot;string&quot;)
 1. Will format the type of data you have and then write to the file accordingly
 
 **Kind**: global function  
 **Date**: 2022-03-05  
 **Author**: zen-out  
 
-| Param    | Type             |
-|----------|------------------|
-| type     | <code>any</code> |
-| "string" | <code>any</code> |
+| Param    | Type                |
+|----------|---------------------|
+| type     | <code>string</code> |
+| "string" | <code>string</code> |
 
 **Example**  
 ```js
@@ -293,7 +297,7 @@ let writeObject = ccc.writeFile("./data/writeToMe.txt", { id: 1, name: "lesley" 
 ```
 <a name="appendFile"></a>
 
-## appendFile(type, &quot;string&quot;) ⇒ <code>any</code>
+## appendFile(type, &quot;string&quot;)
 1. Formats data
 2. Appends to file
 
@@ -301,10 +305,10 @@ let writeObject = ccc.writeFile("./data/writeToMe.txt", { id: 1, name: "lesley" 
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param    | Type             |
-|----------|------------------|
-| type     | <code>any</code> |
-| "string" | <code>any</code> |
+| Param    | Type                |
+|----------|---------------------|
+| type     | <code>string</code> |
+| "string" | <code>string</code> |
 
 **Example**  
 ```js
