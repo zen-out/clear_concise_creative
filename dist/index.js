@@ -3,6 +3,7 @@ const { copy } = require("./copy.js")
 const { deletePath } = require("./deletePath.js")
 const { readJSON, writeJSON, appendToJSON, replaceJSON, mergeJSONObject, getJSONObject, addToNestedJSON } = require("./json.js")
 const { listDir, readFile, writeFile, appendFile, getDirNames } = require("./readWrite.js")
+const { rename } = require("./rename")
 
 function list() {
     let string = `
@@ -25,8 +26,9 @@ function list() {
     ccc.writeFile(stringFile, string)
     ccc.readFile(stringFile)
     ccc.appendFile(stringFile, data)
+    ccc.rename("./test", "jsx", "js")
     `
     console.log(string)
     return string;
 }
-module.exports = { list, listDir, checkPath, copy, readJSON, writeJSON, deletePath, readFile, writeFile, appendToJSON, replaceJSON, appendFile, mergeJSONObject, getJSONObject, addToNestedJSON, getDirNames }
+module.exports = { rename, list, listDir, checkPath, copy, readJSON, writeJSON, deletePath, readFile, writeFile, appendToJSON, replaceJSON, appendFile, mergeJSONObject, getJSONObject, addToNestedJSON, getDirNames }
