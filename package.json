@@ -1,6 +1,6 @@
 {
     "name": "clear_concise_creative",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "given location of class, will generate readme, and index.html explaining documentation ",
     "main": "index.js",
     "scripts": {
