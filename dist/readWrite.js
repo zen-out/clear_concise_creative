@@ -2,12 +2,8 @@ const fs = require("fs-extra")
 const { checkPath } = require("./checkPath")
 
 function readFile(fileLocation) {
-
-    if (checkPath(fileLocation)) {
-        let string = fs.readFileSync(fileLocation, 'utf8')
-
-        return string;
-    }
+    let string = fs.readFileSync(fileLocation, 'utf8')
+    return string;
 }
 
 /**

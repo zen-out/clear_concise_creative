@@ -9,12 +9,7 @@ const fs = require("fs-extra")
      * @param {string} path
      */
 function deletePath(path) {
-    let getPath = checkPath(path)
-    if (getPath) {
-        fs.removeSync(path)
-    } else {
-        console.log("path does not exist")
-    }
+    fs.removeSync(path)
 }
 
 module.exports = { deletePath };
