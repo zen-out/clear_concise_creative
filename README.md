@@ -10,6 +10,15 @@ npm install clear_concise_creative
 const clear_concise_creative =  require('clear_concise_creative')
 ```
 
+## If utilizing in html...: 
+```html
+<script src="./node_modules/clear_concise_creative/index.js"></script>
+<script> 
+$(()=> { 
+     const output =  clear_concise_creative.method(parameter)
+ })
+</script>
+```
 
 
 ## Functions
@@ -78,9 +87,9 @@ checkPath(path)
 **Date**: 2022-03-10  
 **Author**: zen-out  
 
-| Param | Type                |
-|-------|---------------------|
-| path  | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| path | <code>string</code> | 
 
 <a name="copy"></a>
 
@@ -89,11 +98,11 @@ checkPath(path)
 **Date**: 2022-03-07  
 **Author**: zen-out  
 
-| Param  | Type                 | Description |
-|--------|----------------------|-------------|
-| toCopy | <code>string</code>  |             |
-| copyTo | <code>string</code>  |             |
-| copy   | <code>boolean</code> | all         |
+| Param | Type | Description |
+| --- | --- | --- |
+| toCopy | <code>string</code> |  |
+| copyTo | <code>string</code> |  |
+| copy | <code>boolean</code> | all |
 
 **Example**  
 ```js
@@ -110,9 +119,9 @@ ccc.deletePath("./test/deleteThis2/delete.js")
 **Date**: 2022-03-04  
 **Author**: zen-out  
 
-| Param | Type                |
-|-------|---------------------|
-| path  | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| path | <code>string</code> | 
 
 <a name="writeJSON"></a>
 
@@ -124,10 +133,10 @@ ccc.writeJSON('./db.json', object)
 **Date**: 2022-03-04  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| filePath | <code>string</code> |
-| object   | <code>object</code> |
+| Param | Type |
+| --- | --- |
+| filePath | <code>string</code> | 
+| object | <code>object</code> | 
 
 <a name="readJSON"></a>
 
@@ -138,9 +147,9 @@ let getJSON = ccc.readJSON("./db.json")
 **Date**: 2022-03-04  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| filePath | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| filePath | <code>string</code> | 
 
 <a name="appendToJSON"></a>
 
@@ -154,11 +163,11 @@ let getJSON = ccc.readJSON("./db.json")
 **Date**: 2022-03-04  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| filePath | <code>string</code> |
-| key      | <code>string</code> |
-| data     | <code>object</code> |
+| Param | Type |
+| --- | --- |
+| filePath | <code>string</code> | 
+| key | <code>string</code> | 
+| data | <code>object</code> | 
 
 **Example**  
 ```js
@@ -174,11 +183,11 @@ ccc.appendToJSON("./data/appendToMe.json", "test", { id: "lesley" })
 **Date**: 2022-03-05  
 **Author**: zen-out  
 
-| Param    | Type                | Description |
-|----------|---------------------|-------------|
-| filePath | <code>string</code> |             |
-| filePath | <code>string</code> |             |
-| object   | <code>object</code> | to replace  |
+| Param | Type | Description |
+| --- | --- | --- |
+| filePath | <code>string</code> |  |
+| filePath | <code>string</code> |  |
+| object | <code>object</code> | to replace |
 
 **Example**  
 ```js
@@ -193,10 +202,10 @@ ccc.replaceJSON("./data/appendToMe.json", objectDir, { "sexylink": "link" })
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| filePath | <code>string</code> |
-| arrDir   | <code>array</code>  |
+| Param | Type |
+| --- | --- |
+| filePath | <code>string</code> | 
+| arrDir | <code>array</code> | 
 
 **Example**  
 ```js
@@ -209,11 +218,11 @@ let scripts = ccc.getJSONObject("../package.json", ["scripts"])
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param     | Type                |
-|-----------|---------------------|
-| filePath  | <code>string</code> |
-| arrDir    | <code>array</code>  |
-| updateObj | <code>object</code> |
+| Param | Type |
+| --- | --- |
+| filePath | <code>string</code> | 
+| arrDir | <code>array</code> | 
+| updateObj | <code>object</code> | 
 
 **Example**  
 ```js
@@ -229,11 +238,11 @@ let addedCommands = ccc.mergeJSONObject("../package.json", ["scripts"], {
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| filePath | <code>string</code> |
-| arrDir   | <code>array</code>  |
-| addObj   | <code>object</code> |
+| Param | Type |
+| --- | --- |
+| filePath | <code>string</code> | 
+| arrDir | <code>array</code> | 
+| addObj | <code>object</code> | 
 
 **Example**  
 ```js
@@ -252,10 +261,10 @@ only return file names that include the extension
 **Date**: 2022-03-08  
 **Author**: zen-out  
 
-| Param  | Type                |
-|--------|---------------------|
-| folder | <code>string</code> |
-| ext    | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| folder | <code>string</code> | 
+| ext | <code>string</code> | 
 
 **Example**  
 ```js
@@ -272,9 +281,9 @@ console.log("🚀 ~ file: readWrite.js ~ line 33 ~ jsOnly", jsOnly)
 **Date**: 2022-03-22  
 **Author**: zen-out  
 
-| Param  | Type                |
-|--------|---------------------|
-| folder | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| folder | <code>string</code> | 
 
 <a name="writeFile"></a>
 
@@ -285,10 +294,10 @@ console.log("🚀 ~ file: readWrite.js ~ line 33 ~ jsOnly", jsOnly)
 **Date**: 2022-03-05  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| type     | <code>string</code> |
-| "string" | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| type | <code>string</code> | 
+| "string" | <code>string</code> | 
 
 **Example**  
 ```js
@@ -305,10 +314,10 @@ let writeObject = ccc.writeFile("./data/writeToMe.txt", { id: 1, name: "lesley" 
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| type     | <code>string</code> |
-| "string" | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| type | <code>string</code> | 
+| "string" | <code>string</code> | 
 
 **Example**  
 ```js
