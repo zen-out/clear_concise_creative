@@ -1,4 +1,4 @@
 const ccc = require("./index.js")
     // ccc.list()
 
-ccc.copyEverything("./src", "./test")
+// ccc.copyEverything("./src", "./test")
