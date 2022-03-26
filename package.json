@@ -18,7 +18,7 @@
     ],
     "license": "MIT",
     "dependencies": {
-        "automate_me": "^1.0.6",
+        "automate_me": "^1.0.14",
         "clean-jsdoc-theme": "^3.3.4",
         "code_clarity": "^1.0.29",
         "copyfiles": "^2.4.1",
